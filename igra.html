@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>clicker</title>
+</head>
+<body style="background-image: url(venommm].jpg);  background-size: cover;">
+    <p id="p" style="font-size: 23px ;font-family: 'Arial black'; display: inline-block;border: 2px black solid; background-color: rgb(238, 238, 238);">Score:0/5000</p> <br>
+    <input type="button"  value="Улучшение: сила клика(25)" style="font-size: 20px ;font-family: 'Arial black';" onclick='baf()'> <br>
+    <input type="button" value="Улучшение: +1 клик в 2 секунды(100)" style="font-size: 20px ;font-family: 'Arial black';" onclick="p();tapInSecond()" > <br>
+    <input type="button" value="Улучшение: +MAX очков(5000)" style="font-size: 20px ;font-family: 'Arial black';"onclick='maxi()' > <br>
+    <div  style="text-align: center;margin-top:110px;" >
+        <img  src="https://clipart-library.com/img/906447.png" id="img" width="260px"height="260px"  onclick="g()">
+        <script>
+            var venom =1;
+            var click = 0;
+            var max = 5000;
+            var sec = 0;
+            function p(){
+            if(click>=100){
+                click-=100;
+                sec++;
+                document.getElementById('p').innerHTML='Score:'+click+'/'+max;
+            };
+            }
+            function tapInSecond(){
+                if (click < max){
+                click+=sec;
+                document.getElementById('p').innerHTML='Score:'+click+'/'+max;
+                setTimeout("tapInSecond()",2000);
+                
+                };
+            }
+            function baf(){
+                if ( click>=25){
+                venom++;
+                click-=25;
+                document.getElementById('p').innerHTML='Score:'+click+'/'+max;
+                };
+            }
+            function maxi(){
+                if (click >= 5000){
+                    max+=5000;
+                    click-=5000;
+                    document.getElementById('p').innerHTML='Score:'+click+'/'+max;
+                }
+            }
+            function g (){
+                if (click < max) {
+                click+=venom;
+                document.getElementById('p').innerHTML='Score:'+click+'/'+max;
+            };
+
+                
+                    
+            }
+        </script>
+    </div>
+    <script>
+    </script>
+</body>
+</html>
